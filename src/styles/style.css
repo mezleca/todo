@@ -1,0 +1,141 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(104, 126, 255);
+    border-radius: 6px;
+}
+
+.bar {
+    display: flex;
+    background-color: black;
+    min-width: 150px;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 4px 16px rgb(35, 112, 255);
+}
+
+.bar > h1 {
+    color: rgb(4, 142, 255);
+    font-size: 24px;
+    flex-basis: 90%;
+    margin-left: 10px;
+}
+
+.bar > button {
+    width: 80px;
+    height: 35px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.info > h1 {
+    color: white;
+    font-size: medium;
+    border-bottom: 1px solid white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.new_task {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.new_task > button {
+    width: 30%;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    text-wrap: nowrap;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    align-items: center;
+    overflow-y: scroll;
+    margin-bottom: 6px;
+}
+
+.task {
+    display: flex;
+    width: 80%;
+    height: 20%;
+    flex-direction: column;
+    background-color: rgb(128, 179, 255);
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.task > h1 {
+    color: white;
+    cursor: pointer;
+}
+
+/* custom scroll-bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
