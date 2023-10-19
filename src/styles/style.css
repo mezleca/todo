@@ -6,7 +6,17 @@ html, body {
     margin: 0;
     height: 100%;
     overflow-y: hidden;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+.back1 {
+    position: absolute;
+    z-index: 0;
+    width: 90%;
+    height: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(86, 86, 255);
 }
 
 .container {
@@ -19,13 +29,18 @@ html, body {
 }
 
 .box {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 40%;
     height: 50%;
-    background-color: rgb(104, 126, 255);
+    margin-top: -15%;
+    background-color: rgb(248, 248, 246);
     border-radius: 6px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .bar {
@@ -61,9 +76,9 @@ html, body {
 }
 
 .info > h1 {
-    color: white;
-    font-size: medium;
-    border-bottom: 1px solid white;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 .content {
@@ -80,12 +95,13 @@ html, body {
     height: 10%;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 
 .new_task > button {
-    width: 30%;
-    height: 100%;
-    color: rgb(0, 0, 0);
+    width: 20%;
+    height: 60%;
+    color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     border: none;
     text-wrap: nowrap;
@@ -93,6 +109,8 @@ html, body {
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 25px;
+    background-color: rgb(86, 86, 255);
 }
 
 .tasks {
@@ -109,17 +127,32 @@ html, body {
     display: flex;
     width: 80%;
     height: 20%;
-    flex-direction: column;
     background-color: rgb(128, 179, 255);
-    align-items: center;
-    justify-content: center;
     border-radius: 4px;
     margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.task > img {
+    width: 15%;
+    height: 80%;
+    align-self: center;
+    margin-left: 10px;
+    margin-right: 50%;
+}
+
+.resto {
+    display: inline;
+    align-self: center;
+    margin-top: -5px;
+    margin-bottom: -2%;
 }
 
 .task > h1 {
     color: white;
     cursor: pointer;
+    align-self: center;
+    text-wrap: nowrap;
 }
 
 /* custom scroll-bar */

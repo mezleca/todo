@@ -1,4 +1,4 @@
-import { app } from "./db.js";
+import { app } from "./App.js";
 
 app.initialize("tasks");
 app.update();

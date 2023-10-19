@@ -30,6 +30,8 @@ class App {
         this.tasks = JSON.parse(storage);
         this.removed_tasks = JSON.parse(deleted);
 
+        document.querySelector("#status").innerHTML = `${this.tasks.length - 1} task${this.tasks.length - 1 == 1 ? "" : "s"} remaining`;
+
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i].name) {
                 this.update_web(this.tasks[i].name, i);
@@ -55,14 +57,21 @@ class App {
 
         const new_task = document.createElement("div");
         const new_title = document.createElement("h1");
+        const elter_img = document.createElement("img");
 
         new_title.innerHTML = name;
-        new_title.setAttribute("id", `a${this.tasks.length}`);
+        elter_img.src = "imgs/elter.jpg";
+
+        new_title.setAttribute("id", `a${this.tasks.length - 1}`);
         new_title.addEventListener("click", this.remove_item);
+
         new_task.setAttribute("class", "task");
+        new_task.appendChild(elter_img);
         new_task.appendChild(new_title);
 
         div.appendChild(new_task);
+
+        document.querySelector("#status").innerHTML = `${this.tasks.length - 1} task${this.tasks.length - 1 == 1 ? "" : "s"} remaining`; // top
     };
 
     remove_item = (e) => {
@@ -77,6 +86,7 @@ class App {
         this.tasks = new_storage;
         this.update();
 
+        // por enquanto vou ter que usar essa merda
         window.location.reload();
     };  
 
@@ -100,11 +110,16 @@ class App {
 
         const new_task = document.createElement("div");
         const new_title = document.createElement("h1");
+        const elter_img = document.createElement("img");
 
         new_title.innerHTML = name;
-        new_title.setAttribute("id", `a${id}`);
+        elter_img.src = "imgs/elter.jpg";
+
+        new_title.setAttribute("id", `a${this.tasks.length - 1}`);
         new_title.addEventListener("click", this.remove_item);
+        
         new_task.setAttribute("class", "task");
+        new_task.appendChild(elter_img);
         new_task.appendChild(new_title);
 
         tasks.appendChild(new_task);
