@@ -8,18 +8,33 @@
 </head>
 <body>
     <div class="back1"></div>
-    
     <div class="container">
         <div class="box">
-            <div class="info">
-                <h1>T O D O</h1>
+            <div class="active_tab">
+                <div class="info">
+                    <h1>T O D O</h1>
+                </div>
+        
+                <div class="content">
+                    <!-- tasks aqui porra -->
+                    <div class="tasks"> </div>
+                </div>
             </div>
-    
-            <div class="content">
-                <!-- tasks aqui porra -->
-                <div class="tasks"> </div>
-            </div>
+            <div class="finished_tab">
+                <div class="info">
+                    <h1>F I N I S H E D</h1>
+                </div>
+        
+                <div class="content">
+                    <div class="removed_tasks"></div>
+                </div>
+            </div>    
         </div> 
+
+        <div class="menu">
+            <p class="selected" id="active">active tasks</p>
+            <p id="finished">finished tasks</p>
+        </div>
 
         <div class="resto">
             <p id="status">0 tasks remaining</p>
@@ -28,8 +43,13 @@
         <div class="new_task">
             <button id="new">New Task</button>
         </div>
-    </div>
 
+        <footer>
+            <p class="clear">clear all finished tasks</p>
+            <p>developed by <a href="https://github.com/mezleca" style="text-decoration: none; color: black;">rel</a></p>
+        </footer>
+    </div>
+    
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/App.js"></script>
 </body>

@@ -4,6 +4,10 @@ app.initialize("tasks");
 app.update();
 
 const new_task = document.querySelector("#new");
+const clear = document.querySelector(".clear");
+
+const active = document.getElementById("active");
+const finished = document.getElementById("finished");
 
 const handleClick = () => {
     if (app.creating) {
@@ -36,3 +40,25 @@ const handleClick = () => {
 };
 
 new_task.addEventListener("click", handleClick);
+
+active.addEventListener("click", () => {
+    if (!active.classList.contains("selected")) {
+        document.querySelector(".finished_tab").style = "display: none";
+        document.querySelector(".active_tab").style = "display: flex";
+        active.classList.add("selected");
+        finished.classList.remove("selected");
+    }
+});
+
+finished.addEventListener("click", () => {
+    if (!finished.classList.contains("selected")) {
+        document.querySelector(".finished_tab").style = "display: flex";
+        document.querySelector(".active_tab").style = "display: none";
+        active.classList.remove("selected");
+        finished.classList.add("selected");
+    }
+});
+
+clear.addEventListener("click", () => {
+    app.clear_finished_tasks();
+})
